@@ -1,0 +1,63 @@
+# Build outputs (classic MSBuild / .NET Framework)
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+artifacts/
+TestResults/
+
+# Visual Studio per-user data and caches
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+*.sln.ide
+*.VC.db
+*.VC.VC.opendb
+
+# VS Code local machine preferences (keep shared tasks and workspace)
+.vscode/settings.json
+.vscode/launch.json
+.vscode/*.code-snippets.local
+.history/
+
+# NuGet caches and restored packages
+packages/
+*.nupkg
+*.snupkg
+
+# Generated binaries and symbols outside normal bin/obj folders
+*.dll
+*.exe
+*.pdb
+*.mdb
+*.cache
+*.tlog
+*.log
+*.tmp
+*.temp
+
+# Local deployment/backups
+*.bak
+*.bak.*
+*.orig
+*.rej
+*.patch.backup
+
+# OS and editor clutter
+.DS_Store
+Thumbs.db
+Desktop.ini
+*~
+*.swp
+*.swo
+
+# Local secrets and environment overrides
+.env
+.env.*
+!.env.example
+*.secrets.json
+
+# Keep *.cs, *.csproj, *.ps1, *.code-workspace, and .vscode/tasks.json tracked.

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B3CD97E2-72A4-4F65-BBCE-B6F70EFEC26D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>UnicornOne.ExternalWorkbooks</RootNamespace>
+    <AssemblyName>GaNLiveExternal</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <LangVersion>7.3</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <UnicornOneRoot Condition="'$(UnicornOneRoot)' == ''">C:\Users\Bizmuth\source\repos\UnicornOne</UnicornOneRoot>
+    <NewtonsoftJsonPath Condition="'$(NewtonsoftJsonPath)' == ''">$(UnicornOneRoot)\UnicornOne.Core\bin\$(Configuration)\Newtonsoft.Json.dll</NewtonsoftJsonPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(NewtonsoftJsonPath)</HintPath><Private>False</Private>
+    </Reference>
+    <Reference Include="UnicornOne.Abstractions">
+      <HintPath>$(UnicornOneRoot)\UnicornOne.Abstractions\bin\$(Configuration)\UnicornOne.Abstractions.dll</HintPath><Private>False</Private>
+    </Reference>
+    <Reference Include="UnicornOne.Platform">
+      <HintPath>$(UnicornOneRoot)\UnicornOne.Platform\bin\$(Configuration)\UnicornOne.Platform.dll</HintPath><Private>False</Private>
+    </Reference>
+    <Reference Include="UnicornOne.Core">
+      <HintPath>$(UnicornOneRoot)\UnicornOne.Core\bin\$(Configuration)\UnicornOne.Core.dll</HintPath><Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\GaNLiveExternalWorkbook.cs" />
+    <Compile Include="src\GaNLive\GaNLiveForm.cs" />
+    <Compile Include="src\GaNLive\GaNLiveForm.Designer.cs" />
+    <Compile Include="src\GaNLive\GaNLiveManager.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
